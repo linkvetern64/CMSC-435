@@ -1,0 +1,1 @@
+/usr/bin/c++.exe   -std=c++11 -g  -Wl,--enable-auto-import CMakeFiles/proj.dir/main.cpp.o CMakeFiles/proj.dir/RayTracer.cpp.o CMakeFiles/proj.dir/Polygon.cpp.o CMakeFiles/proj.dir/Sphere.cpp.o  -o proj.exe -Wl,--out-implib,libproj.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

@@ -39,6 +39,8 @@ public:
     //Prints image to ppm file
     void printImage(void);
 
+    void init(void);
+
 
 private:
 

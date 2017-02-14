@@ -10,10 +10,16 @@
 #include <sstream>
 #include <vector>
 #include <string>
+#include <numeric>
 
 /*Custom includes*/
 #include "RayTracer.h"
 #include "Polygon.h"
+#include "../common/slVector.H"
+#include "../common/slTransform.H"
+#include "../common/slIO.H"
+//#include "../common/CImg.h"
+
 
 void printImage(void);
 
@@ -27,6 +33,13 @@ int main() {
     string filepath = "tetra-3.nff";
     string tokens[tokenSize];
     vector<Polygon> polygons;
+
+     /*
+     * Calling inline functions
+     * cross()
+     * dot()
+     */
+
 
     file.open(filepath);
 
