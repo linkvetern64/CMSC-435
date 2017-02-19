@@ -11,6 +11,8 @@
 #include <vector>
 #include <string>
 #include <numeric>
+#include <math.h>
+
 
 /*Custom includes*/
 #include "RayTracer.h"
@@ -20,6 +22,7 @@
 #include "../common/slIO.H"
 //#include "../common/CImg.h"
 
+#define PI 3.14159265
 
 void printImage(void);
 
@@ -131,6 +134,8 @@ int main() {
     }
     file.close();
 
+    /** Begin Computation **/
+
     /**Eye point vector**/
     e = SlVector3(from.x(), from.y(), from.z());
 
@@ -142,20 +147,43 @@ int main() {
     u = cross(up, w);
     v = cross(w, u);
 
+
+    /** Angle has to be in rads!!!!! **/
+    double rad_angle = (angle * PI) / 180.0;
+    m = tan(rad_angle / 2) * d;
+
+
+    /** Assigns the Left, Right, Top, Bottom values **/
+    l = b = -m;
+    r = t = m;
+
     /** Debug Statements **/
     /*
     cout << "X: " << w.x() << " Y: " << w.y() << " Z: " << w.z() << endl;
     cout << "X: " << u.x() << " Y: " << u.y() << " Z: " << u.z() << endl;
     cout << "X: " << v.x() << " Y: " << v.y() << " Z: " << v.z() << endl;
+    cout << "M - value: " << m << endl;
+    cout << "Left: " << l << endl;
+    cout << "Right: " << r << endl;
+    cout << "Bottom: " << b << endl;
+    cout << "Top: " << t << endl;
     */
+    /** End Computation **/
 
+    for(int i = 0; i < ray.xres; i++){
+        for(int j = 0; j < ray.yres; j++){
+            /** Compute pixels here**/
+            /* Calculate pixel location in world space
+             * Calculate ray from eye point through pixel into scene
+             * calculate ray-object intersections, choose closest T
+             * set pixel to that color
+             */
+            
+        }
+    }
 
-
-    m = tan(angle / 2) * d;
-    cout << "D: " << d << endl;
-    cout << "L: " << -m + (m / ray.xres) << endl;
-
-    ray.printImage();
+    /** Write pixels out to file **/
+    //ray.printImage();
 
     return 0;
 }

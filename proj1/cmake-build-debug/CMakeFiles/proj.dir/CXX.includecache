@@ -61,6 +61,8 @@ string
 -
 numeric
 -
+math.h
+-
 RayTracer.h
 /cygdrive/c/Users/Josh/CMSC-435/proj1/RayTracer.h
 Polygon.h
