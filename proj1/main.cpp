@@ -34,6 +34,8 @@ int main() {
     string tokens[tokenSize];
     vector<Polygon> polygons;
 
+    double t, l, b, r, d, angle, m;
+    SlVector3 from, up, w, u, v, at, e;
      /*
      * Calling inline functions
      * cross()
@@ -68,22 +70,26 @@ int main() {
                     ray.Fx = stof(tokens[1]);
                     ray.Fy = stof(tokens[2]);
                     ray.Fz = stof(tokens[3]);
+                    from = SlVector3(ray.Fx, ray.Fy, ray.Fz);
                     break;
                 }
                 else if(!cmp.compare("at")){
                     ray.Ax = stof(tokens[1]);
                     ray.Ay = stof(tokens[2]);
                     ray.Az = stof(tokens[3]);
+                    at = SlVector3(ray.Ax, ray.Ay, ray.Az);
                     break;
                 }
                 else if(!cmp.compare("up")){
                     ray.Ux = stof(tokens[1]);
                     ray.Uy = stof(tokens[2]);
                     ray.Uz = stof(tokens[3]);
+                    up = SlVector3(ray.Ux, ray.Uy, ray.Uz);
                     break;
                 }
                 else if(!cmp.compare("angle")){
                     ray.angle = stoi(tokens[1]);
+                    angle = ray.angle;
                     break;
                 }
                 else if(!cmp.compare("hither")){
@@ -125,6 +131,29 @@ int main() {
     }
     file.close();
 
+    /**Eye point vector**/
+    e = SlVector3(from.x(), from.y(), from.z());
+
+    /**Magnitude of vectors from - at*/
+    d = mag(from - at);
+
+    /**Math works and verified**/
+    w = (from - at) / mag(from - at); //This makes a normalized W
+    u = cross(up, w);
+    v = cross(w, u);
+
+    /** Debug Statements **/
+    /*
+    cout << "X: " << w.x() << " Y: " << w.y() << " Z: " << w.z() << endl;
+    cout << "X: " << u.x() << " Y: " << u.y() << " Z: " << u.z() << endl;
+    cout << "X: " << v.x() << " Y: " << v.y() << " Z: " << v.z() << endl;
+    */
+
+
+
+    m = tan(angle / 2) * d;
+    cout << "D: " << d << endl;
+    cout << "L: " << -m + (m / ray.xres) << endl;
 
     ray.printImage();
 
