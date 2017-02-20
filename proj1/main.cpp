@@ -168,6 +168,7 @@ int main() {
     cout << "Bottom: " << b << endl;
     cout << "Top: " << t << endl;
     */
+
     /** End Computation **/
 
     double u_pos, v_pos;
@@ -180,9 +181,9 @@ int main() {
     double a0, b0, c0, d0, e0, f0, g0, h0, i0, j0, k0, l0;
 
     SlVector3 Av, Bv, Cv;
-    Av = SlVector3(0,1,1);
-    Bv = SlVector3(1,0,-1);
-    Cv = SlVector3(-1,-1,-1);
+    Av = SlVector3(1,1,1);
+    Bv = SlVector3(1,1,-1);
+    Cv = SlVector3(0,0,-1);
 
     unsigned char pixels[Nx][Ny][3];
 
@@ -250,7 +251,7 @@ int main() {
 
             if(!err){
                 //set pixel color to triangle color
-                pixels[j][i][1]= 1*255;
+                pixels[j][i][2]= 1*255;
 
             }
             else{

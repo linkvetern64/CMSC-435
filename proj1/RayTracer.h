@@ -41,6 +41,7 @@ public:
 
     void init(void);
 
+    void triangleIntersect(void);
 
 private:
 
