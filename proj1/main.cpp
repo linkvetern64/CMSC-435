@@ -174,6 +174,17 @@ int main() {
     int Nx, Ny;
     Nx = ray.xres;
     Ny = ray.yres;
+    SlVector3 direction;
+    SlVector3 origin;
+    double beta, gamma, t, M;
+    double a0, b0, c0, d0, e0, f0, g0, h0, i0, j0, k0, l0;
+
+    SlVector3 Av, Bv, Cv;
+    Av = SlVector3(0,1,1);
+    Bv = SlVector3(1,0,-1);
+    Cv = SlVector3(-1,-1,-1);
+
+    unsigned char pixels[Nx][Ny][3];
 
     for(int i = 0; i < Nx; i++){
         for(int j = 0; j < Ny; j++){
@@ -188,12 +199,74 @@ int main() {
             u_pos = L + (((R - L) * (i + 0.5)) / Nx );
             v_pos = B + (((T - B) * (j + 0.5)) / Ny );
 
+            /* Vector D */
+            direction = ((-d * w) + (u_pos * u) + (v_pos * v));
 
+            /* Vector E*/
+            origin = e;
+
+            /** Compute Cramer Rule**/
+
+            a0 = Av.x() - Bv.x();
+            b0 = Av.y() - Bv.y();
+            c0 = Av.z() - Bv.z();
+            d0 = Av.x() - Cv.x();
+            e0 = Av.y() - Cv.y();
+            f0 = Av.z() - Cv.z();
+            g0 = direction.x();
+            h0 = direction.y();
+            i0 = direction.z();
+            j0 = Av.x() - origin.x();
+            k0 = Av.y() - origin.y();
+            l0 = Av.z() - origin.z();
+
+            bool err = false;
+
+            M = a0*(e0*i0 - h0*f0) + b0*(g0*f0 - d0*i0) + c0*(d0*h0 - e0*g0);
+
+            /** Compute T **/
+
+            t = -(f0*(a0*k0 - j0*b0) + e0*(j0*c0 - a0*l0) + d0*(b0*l0 - k0*c0)) / M;
+
+            if( t < 0 || t > 100){
+                err = true;
+            }
+
+            /** Compute Gamma **/
+
+            gamma = (i0*(a0*k0 - j0*b0) + h0*(j0*c0 - a0*l0) + g0*(b0*l0 - k0*c0)) / M;
+
+            if( gamma < 0 || gamma > 1){
+                err = true;
+            }
+
+            /** Compute Beta **/
+
+            beta =  (j0*(e0*i0 - h0*f0) + k0*(g0*f0 - d0*i0) + l0*(d0*h0 - e0*g0)) / M;
+
+            if(beta < 0 || beta > (1 - gamma)){
+                err = true;
+            }
+
+            if(!err){
+                //set pixel color to triangle color
+                pixels[j][i][1]= 1*255;
+
+            }
+            else{
+                pixels[j][i][1]= 0*255;
+                //set to background color
+            }
         }
     }
 
     /** Write pixels out to file **/
     //ray.printImage();
+
+    FILE *f = fopen("hide.ppm","wb");
+    fprintf(f, "P6\n%d %d\n%d\n", Nx, Ny, 255);
+    fwrite(pixels, 1, Nx*Ny*3, f);
+    fclose(f);
 
     return 0;
 }
