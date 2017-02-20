@@ -37,7 +37,7 @@ int main() {
     string tokens[tokenSize];
     vector<Polygon> polygons;
 
-    double t, l, b, r, d, angle, m;
+    double L, B, R, T, d, angle, m;
     SlVector3 from, up, w, u, v, at, e;
      /*
      * Calling inline functions
@@ -154,8 +154,8 @@ int main() {
 
 
     /** Assigns the Left, Right, Top, Bottom values **/
-    l = b = -m;
-    r = t = m;
+    L = B = -m;
+    R = T = m;
 
     /** Debug Statements **/
     /*
@@ -170,15 +170,25 @@ int main() {
     */
     /** End Computation **/
 
-    for(int i = 0; i < ray.xres; i++){
-        for(int j = 0; j < ray.yres; j++){
+    double u_pos, v_pos;
+    int Nx, Ny;
+    Nx = ray.xres;
+    Ny = ray.yres;
+
+    for(int i = 0; i < Nx; i++){
+        for(int j = 0; j < Ny; j++){
             /** Compute pixels here**/
             /* Calculate pixel location in world space
              * Calculate ray from eye point through pixel into scene
              * calculate ray-object intersections, choose closest T
              * set pixel to that color
              */
-            
+
+            /** calculates pixel location in world space **/
+            u_pos = L + (((R - L) * (i + 0.5)) / Nx );
+            v_pos = B + (((T - B) * (j + 0.5)) / Ny );
+
+
         }
     }
 
