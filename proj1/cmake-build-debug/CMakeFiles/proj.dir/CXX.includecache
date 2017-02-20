@@ -6,17 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Josh/CMSC-435/common/slIO.H
-iostream
--
-
-/cygdrive/c/Users/Josh/CMSC-435/common/slTransform.H
-iostream
--
-slVector.H
-/cygdrive/c/Users/Josh/CMSC-435/common/slVector.H
-
-/cygdrive/c/Users/Josh/CMSC-435/common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/SlVector.h
 cmath
 -
 cstdlib
@@ -24,31 +14,59 @@ cstdlib
 iostream
 -
 
-/cygdrive/c/Users/Josh/CMSC-435/proj1/Polygon.cpp
-Polygon.h
-/cygdrive/c/Users/Josh/CMSC-435/proj1/Polygon.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slIO.H
 iostream
 -
 
-/cygdrive/c/Users/Josh/CMSC-435/proj1/Polygon.h
-vector
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slTransform.H
+iostream
+-
+slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
+
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
+cmath
+-
+cstdlib
+-
+iostream
 -
 
-/cygdrive/c/Users/Josh/CMSC-435/proj1/RayTracer.cpp
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Polygon.cpp
+Polygon.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Polygon.h
+vector
+-
+iostream
+-
+
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Polygon.h
+vector
+-
+../common/SlVector.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/SlVector.h
+
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.cpp
 iostream
 -
 RayTracer.h
-/cygdrive/c/Users/Josh/CMSC-435/proj1/RayTracer.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.h
+math.h
+-
+../common/SlVector.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/SlVector.h
 
-/cygdrive/c/Users/Josh/CMSC-435/proj1/RayTracer.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.h
+../common/SlVector.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/SlVector.h
 
-/cygdrive/c/Users/Josh/CMSC-435/proj1/Sphere.cpp
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.cpp
 Sphere.h
-/cygdrive/c/Users/Josh/CMSC-435/proj1/Sphere.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.h
 
-/cygdrive/c/Users/Josh/CMSC-435/proj1/Sphere.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.h
 
-/cygdrive/c/Users/Josh/CMSC-435/proj1/main.cpp
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/main.cpp
 iostream
 -
 fstream
@@ -64,13 +82,13 @@ numeric
 math.h
 -
 RayTracer.h
-/cygdrive/c/Users/Josh/CMSC-435/proj1/RayTracer.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.h
 Polygon.h
-/cygdrive/c/Users/Josh/CMSC-435/proj1/Polygon.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Polygon.h
 ../common/slVector.H
-/cygdrive/c/Users/Josh/CMSC-435/common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 ../common/slTransform.H
-/cygdrive/c/Users/Josh/CMSC-435/common/slTransform.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slTransform.H
 ../common/slIO.H
-/cygdrive/c/Users/Josh/CMSC-435/common/slIO.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slIO.H
 

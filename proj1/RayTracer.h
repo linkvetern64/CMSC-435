@@ -5,25 +5,32 @@
 #ifndef PROJ_RAYTRACER_H
 #define PROJ_RAYTRACER_H
 
+#include "../common/SlVector.h"
+
 class RayTracer {
 public:
     /*Public Variables*/
 
-    //Background color
-    //Red, Green, Blue
-    float R,G,B;
-    //The eye location in XYZ
-    float Fx, Fy, Fz;
-    //Position to be at the center of the image, in XYZ coordinates
-    float Ax, Ay, Az;
-    //Vector defining up direction, XYZ vector
-    float Ux, Uy, Uz;
-    //Angle in degrees
-    int angle;
+    double L, B, R, T, d, angle, m;
+
+    SlVector3 from, up, w, u, v, at, e;
+
+
+    double u_pos, v_pos;
+    double rad_angle;
+    SlVector3 direction;
+    SlVector3 origin;
+    double beta, gamma, t, M;
+    double a0, b0, c0, d0, e0, f0, g0, h0, i0, j0, k0, l0;
+
+
+
     //Hither
     int hither;
     //Resolution
-    int xres, yres;
+    int Nx, Ny;
+
+
     //Fill color and shading parameters
     //Red Green Blue Kd Ks Shine T refraction_index
     float Rs, Gs, Bs;
@@ -39,9 +46,10 @@ public:
     //Prints image to ppm file
     void printImage(void);
 
+
     void init(void);
 
-    void triangleIntersect(void);
+    bool triangleIntersect(SlVector3, SlVector3, SlVector3, int, int);
 
 private:
 

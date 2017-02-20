@@ -5,11 +5,11 @@
 #ifndef PROJ_POLYGON_H
 #define PROJ_POLYGON_H
 
-#include <vector>
+#define PI 3.14159265
 
-struct vertices{
-    float x, y, z;
-};
+#include <vector>
+#include "../common/SlVector.h"
+
 
 class Polygon {
 
@@ -20,9 +20,8 @@ public:
 
     //Vector containing structs of vertices
     //Scalable beyond 3 given coordinates
-    std::vector<vertices> vertex;
+    std::vector<SlVector3> vertex;
 
-    float x, y, z;
 
     //Constructor
     Polygon();
@@ -31,11 +30,12 @@ public:
     ~Polygon();
 
     //Creates vertice struct and inserts into vert vector
-    void insertVertices(float, float, float);
+    void insertVertices(double, double, double);
 
     //Prints vertices in struct vector
     void printVertices(void);
 
+    std::vector<SlVector3> getVectors(void);
 
 private:
     //Nonion rings

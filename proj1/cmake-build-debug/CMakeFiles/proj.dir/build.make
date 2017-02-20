@@ -43,10 +43,10 @@ RM = /cygdrive/c/Users/Josh/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -E re
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/Users/Josh/CMSC-435/proj1
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/Users/Josh/CMSC-435/proj1/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/proj.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/proj.dir/flags.make
 
 CMakeFiles/proj.dir/main.cpp.o: CMakeFiles/proj.dir/flags.make
 CMakeFiles/proj.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Josh/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/proj.dir/main.cpp.o"
-	/usr/bin/c++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/proj.dir/main.cpp.o -c /cygdrive/c/Users/Josh/CMSC-435/proj1/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/proj.dir/main.cpp.o"
+	/usr/bin/c++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/proj.dir/main.cpp.o -c /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/main.cpp
 
 CMakeFiles/proj.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/proj.dir/main.cpp.i"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Josh/CMSC-435/proj1/main.cpp > CMakeFiles/proj.dir/main.cpp.i
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/main.cpp > CMakeFiles/proj.dir/main.cpp.i
 
 CMakeFiles/proj.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/proj.dir/main.cpp.s"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Josh/CMSC-435/proj1/main.cpp -o CMakeFiles/proj.dir/main.cpp.s
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/main.cpp -o CMakeFiles/proj.dir/main.cpp.s
 
 CMakeFiles/proj.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/proj.dir/main.cpp.o.provides.build: CMakeFiles/proj.dir/main.cpp.o
 
 CMakeFiles/proj.dir/RayTracer.cpp.o: CMakeFiles/proj.dir/flags.make
 CMakeFiles/proj.dir/RayTracer.cpp.o: ../RayTracer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Josh/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/proj.dir/RayTracer.cpp.o"
-	/usr/bin/c++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/proj.dir/RayTracer.cpp.o -c /cygdrive/c/Users/Josh/CMSC-435/proj1/RayTracer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/proj.dir/RayTracer.cpp.o"
+	/usr/bin/c++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/proj.dir/RayTracer.cpp.o -c /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.cpp
 
 CMakeFiles/proj.dir/RayTracer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/proj.dir/RayTracer.cpp.i"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Josh/CMSC-435/proj1/RayTracer.cpp > CMakeFiles/proj.dir/RayTracer.cpp.i
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.cpp > CMakeFiles/proj.dir/RayTracer.cpp.i
 
 CMakeFiles/proj.dir/RayTracer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/proj.dir/RayTracer.cpp.s"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Josh/CMSC-435/proj1/RayTracer.cpp -o CMakeFiles/proj.dir/RayTracer.cpp.s
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.cpp -o CMakeFiles/proj.dir/RayTracer.cpp.s
 
 CMakeFiles/proj.dir/RayTracer.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/proj.dir/RayTracer.cpp.o.provides.build: CMakeFiles/proj.dir/RayTrace
 
 CMakeFiles/proj.dir/Polygon.cpp.o: CMakeFiles/proj.dir/flags.make
 CMakeFiles/proj.dir/Polygon.cpp.o: ../Polygon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Josh/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/proj.dir/Polygon.cpp.o"
-	/usr/bin/c++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/proj.dir/Polygon.cpp.o -c /cygdrive/c/Users/Josh/CMSC-435/proj1/Polygon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/proj.dir/Polygon.cpp.o"
+	/usr/bin/c++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/proj.dir/Polygon.cpp.o -c /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Polygon.cpp
 
 CMakeFiles/proj.dir/Polygon.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/proj.dir/Polygon.cpp.i"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Josh/CMSC-435/proj1/Polygon.cpp > CMakeFiles/proj.dir/Polygon.cpp.i
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Polygon.cpp > CMakeFiles/proj.dir/Polygon.cpp.i
 
 CMakeFiles/proj.dir/Polygon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/proj.dir/Polygon.cpp.s"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Josh/CMSC-435/proj1/Polygon.cpp -o CMakeFiles/proj.dir/Polygon.cpp.s
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Polygon.cpp -o CMakeFiles/proj.dir/Polygon.cpp.s
 
 CMakeFiles/proj.dir/Polygon.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/proj.dir/Polygon.cpp.o.provides.build: CMakeFiles/proj.dir/Polygon.cp
 
 CMakeFiles/proj.dir/Sphere.cpp.o: CMakeFiles/proj.dir/flags.make
 CMakeFiles/proj.dir/Sphere.cpp.o: ../Sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Josh/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/proj.dir/Sphere.cpp.o"
-	/usr/bin/c++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/proj.dir/Sphere.cpp.o -c /cygdrive/c/Users/Josh/CMSC-435/proj1/Sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/proj.dir/Sphere.cpp.o"
+	/usr/bin/c++.exe   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/proj.dir/Sphere.cpp.o -c /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.cpp
 
 CMakeFiles/proj.dir/Sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/proj.dir/Sphere.cpp.i"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Josh/CMSC-435/proj1/Sphere.cpp > CMakeFiles/proj.dir/Sphere.cpp.i
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.cpp > CMakeFiles/proj.dir/Sphere.cpp.i
 
 CMakeFiles/proj.dir/Sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/proj.dir/Sphere.cpp.s"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Josh/CMSC-435/proj1/Sphere.cpp -o CMakeFiles/proj.dir/Sphere.cpp.s
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.cpp -o CMakeFiles/proj.dir/Sphere.cpp.s
 
 CMakeFiles/proj.dir/Sphere.cpp.o.requires:
 
@@ -169,7 +169,7 @@ proj.exe: CMakeFiles/proj.dir/Polygon.cpp.o
 proj.exe: CMakeFiles/proj.dir/Sphere.cpp.o
 proj.exe: CMakeFiles/proj.dir/build.make
 proj.exe: CMakeFiles/proj.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/Josh/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable proj.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable proj.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/proj.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -189,6 +189,6 @@ CMakeFiles/proj.dir/clean:
 .PHONY : CMakeFiles/proj.dir/clean
 
 CMakeFiles/proj.dir/depend:
-	cd /cygdrive/c/Users/Josh/CMSC-435/proj1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/Users/Josh/CMSC-435/proj1 /cygdrive/c/Users/Josh/CMSC-435/proj1 /cygdrive/c/Users/Josh/CMSC-435/proj1/cmake-build-debug /cygdrive/c/Users/Josh/CMSC-435/proj1/cmake-build-debug /cygdrive/c/Users/Josh/CMSC-435/proj1/cmake-build-debug/CMakeFiles/proj.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles/proj.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/proj.dir/depend
 
