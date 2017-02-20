@@ -33,7 +33,7 @@ int main() {
     RayTracer ray;
     string line;
     string filepath = "tetra-3.nff";
-    string tokens[tokenSize];
+    string tokens[8];
     vector<Polygon> polygons;
 
      /*
@@ -136,6 +136,8 @@ int main() {
             for (int k = 0; k < polygons.size(); k++) {
                 if (ray.triangleIntersect(polygons.at(k).getVectors().at(0), polygons.at(k).getVectors().at(1), polygons.at(k).getVectors().at(2), i, j)) {
                     pixels[j][i][0] = 1 * 255;
+                    pixels[j][i][1] = .2 * 255;
+                    pixels[j][i][2] = .2 * 255;
                     break;
                 }
                 else{

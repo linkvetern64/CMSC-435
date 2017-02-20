@@ -41,7 +41,7 @@ void RayTracer::init(){
     w = (from - at) / mag(from - at); //This makes a normalized W
     u = cross(up, w); //Need to normalize U
     u = u / mag(u);
-    v = cross(w, u);
+    v = cross(w, -u);
 
 
     /** Angle has to be in rads!!!!! **/
