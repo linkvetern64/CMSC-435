@@ -111,8 +111,3 @@ bool RayTracer::triangleIntersect(SlVector3 Av, SlVector3 Bv, SlVector3 Cv, int 
 
     return true;
 }
-
-
-void RayTracer::printImage(){
-
-}

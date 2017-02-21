@@ -1,0 +1,18 @@
+Author: Joshua Standiford
+Email: jstand1@umbc.edu
+Date: 2/20/2017
+Description:
+This program (main.cpp) creates a ray tracer which reads an NFF file to place geometry in a
+picture and print the picture.
+
+Resources:
+Fundamentals of Computer Graphics 3rd edition
+Professor Bargteil's equations from lecture
+stackoverflow.com for general C++ help.
+code provided on the project website.
+
+How to run:
+Simply running 'make' will compile the program.
+running 'make run', will run the program
+running 'make clean', will clean the object file created by 'make' and allow you to run make again
+

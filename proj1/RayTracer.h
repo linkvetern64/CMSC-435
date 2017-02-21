@@ -33,7 +33,7 @@ public:
 
     //Fill color and shading parameters
     //Red Green Blue Kd Ks Shine T refraction_index
-    float Rs, Gs, Bs;
+    double Rs, Gs, Bs;
 
     /*Constructor*/
     RayTracer();
