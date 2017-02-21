@@ -31,7 +31,8 @@ int main() {
     ifstream file;
     RayTracer ray;
     string line;
-    string filepath = "tetra-3.nff";
+    //string filepath = "tetra-3.nff";
+    string filepath = "balls.nff";
     string tokens[8];
     vector<Polygon> polygons;
     vector<Sphere> spheres;
@@ -95,7 +96,6 @@ int main() {
                     ray.Rs = atof(tokens[1].data());
                     ray.Gs = atof(tokens[2].data());
                     ray.Bs = atof(tokens[3].data());
-                    cout << ray.Rs << " " << ray.Gs << " " << ray.Bs;
                     break;
                 }
                 //For populating Polygons
@@ -118,21 +118,7 @@ int main() {
                     break;
                 }
                 else if(!cmp.compare("s")){
-                    int polyCount = atoi(tokens[1].data());
-                    Polygon sphere;
-                    for(int m = 0; m < polyCount; m++){
-
-                        getline(file, line);
-                        stringstream tokenizer(line);
-                        int i = 0;
-                        //break apart string into tokens
-                        while(tokenizer.good() && i < tokenSize){
-                            tokenizer >> tokens[i];
-                            i++;
-                        }
-                        polygon.insertVertices(atof(tokens[0].data()), atof(tokens[1].data()), atof(tokens[2].data()));
-                    }
-                    polygons.push_back(polygon);
+                    spheres.push_back(Sphere(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data()), atof(tokens[4].data())));
                     break;
                 }
             }
@@ -140,6 +126,7 @@ int main() {
     }
     file.close();
     ray.init();
+
 
     unsigned char pixels[ray.Nx][ray.Ny][3];
 
@@ -171,6 +158,7 @@ int main() {
     //;
 
     /** Write pixels out to file **/
+
     FILE *f = fopen("hide.ppm","wb");
     fprintf(f, "P6\n%d %d\n%d\n", ray.Nx, ray.Ny, 255);
     fwrite(pixels, 1, ray.Nx*ray.Ny*3, f);

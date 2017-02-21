@@ -5,7 +5,7 @@
 #include <iostream>
 #include "RayTracer.h"
 #include <math.h>
-#include "../common/SlVector.h"
+#include "../common/slVector.H"
 
 #define PI 3.14159265
 

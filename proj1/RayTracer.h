@@ -5,7 +5,7 @@
 #ifndef PROJ_RAYTRACER_H
 #define PROJ_RAYTRACER_H
 
-#include "../common/SlVector.h"
+#include "../common/slVector.H"
 
 class RayTracer {
 public:

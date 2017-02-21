@@ -9,14 +9,14 @@ CMakeFiles/proj.dir/RayTracer.cpp.o: /cygdrive/c/Users/Josh/Desktop/CMSC-435/com
 CMakeFiles/proj.dir/RayTracer.cpp.o: ../RayTracer.cpp
 CMakeFiles/proj.dir/RayTracer.cpp.o: ../RayTracer.h
 
+CMakeFiles/proj.dir/Sphere.cpp.o: /cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 CMakeFiles/proj.dir/Sphere.cpp.o: ../Sphere.cpp
 CMakeFiles/proj.dir/Sphere.cpp.o: ../Sphere.h
 
 CMakeFiles/proj.dir/main.cpp.o: /cygdrive/c/Users/Josh/Desktop/CMSC-435/common/SlVector.h
-CMakeFiles/proj.dir/main.cpp.o: /cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slIO.H
-CMakeFiles/proj.dir/main.cpp.o: /cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slTransform.H
 CMakeFiles/proj.dir/main.cpp.o: /cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 CMakeFiles/proj.dir/main.cpp.o: ../Polygon.h
 CMakeFiles/proj.dir/main.cpp.o: ../RayTracer.h
+CMakeFiles/proj.dir/main.cpp.o: ../Sphere.h
 CMakeFiles/proj.dir/main.cpp.o: ../main.cpp
 

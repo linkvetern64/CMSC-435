@@ -8,7 +8,7 @@
 #define PI 3.14159265
 
 #include <vector>
-#include "../common/SlVector.h"
+#include "../common/slVector.H"
 
 
 class Polygon {

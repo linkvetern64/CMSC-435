@@ -14,16 +14,6 @@ cstdlib
 iostream
 -
 
-/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slIO.H
-iostream
--
-
-/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slTransform.H
-iostream
--
-slVector.H
-/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
-
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 cmath
 -
@@ -63,6 +53,8 @@ math.h
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.cpp
 Sphere.h
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.h
+../common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.h
 
@@ -87,10 +79,8 @@ RayTracer.h
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.h
 Polygon.h
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Polygon.h
+Sphere.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.h
 ../common/slVector.H
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
-../common/slTransform.H
-/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slTransform.H
-../common/slIO.H
-/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slIO.H
 
