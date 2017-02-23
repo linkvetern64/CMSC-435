@@ -23,7 +23,7 @@ public:
 
     std::string getType(void);
 
-    bool intersect(SlVector3, SlVector3);
+    virtual bool intersect(SlVector3, SlVector3);
 
 };
 

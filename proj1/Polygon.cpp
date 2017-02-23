@@ -3,19 +3,14 @@
 //
 #include "Polygon.h"
 
-/**
- * Creates a new vertice struct and insert it into that polygons vertice vector
- * @param x - float of position X
- * @param y - float of position Y
- * @param z - float of position Z
- */
-void Polygon::insertVertices(double x, double y, double z){
-    vertex.push_back(SlVector3(x, y, z));
+
+Polygon::Polygon(std::vector<SlVector3> vertices) {
+    this->vertex = vertices;
 }
 
 
-
 bool Polygon::intersect(SlVector3 direction, SlVector3 origin){
+
     /** Compute Cramer Rule**/
     SlVector3 Av = vertex.at(0);
     SlVector3 Bv = vertex.at(1);

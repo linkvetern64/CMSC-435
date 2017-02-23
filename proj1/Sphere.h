@@ -14,12 +14,12 @@ class Sphere  : public Shape{
         SlVector3 C;
         double radius;
 
-        Sphere();
+        Sphere() : Shape(){};
         Sphere(SlVector3, double);
 
         ~Sphere();
 
-        bool intersect(SlVector3, SlVector3);
+        virtual bool intersect(SlVector3, SlVector3);
 };
 
 

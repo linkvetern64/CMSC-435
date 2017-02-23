@@ -5,19 +5,27 @@
  */
 #include "RayTracer.h"
 #include "Shape.h"
+
 using namespace std;
 int main() {
 
+    /**
+     * Todo:  Set up generic fill color for each object
+     *        Set up file passing in CMD line arguments
+     *        Keep on optimizing fam
+     */
 
     RayTracer ray;
-    //string filepath = "tetra-3.nff";
-    string filepath = "balls.nff";
+    string filepath = "tetra-3.nff";
+    //string filepath = "balls.nff";
 
     ray.init(filepath);
 
+    vector<Shape *> polys  = ray.getGeometry();
     unsigned char pixels[ray.Nx][ray.Ny][3];
 
     for(int i = 0; i < ray.Nx; i++) {
+
         for (int j = 0; j < ray.Ny; j++) {
             /** Compute pixels here**/
             /* Calculate pixel location in world space
@@ -36,13 +44,10 @@ int main() {
             /* Vector E*/
             ray.origin = ray.e;
 
-            //vector<Polygon> polys = ray.getTriangles();
-            vector<Sphere> polys = ray.getSpheres();
-
             bool inter = false;
             /** Check each Shape object in the vector */
             for (int k = 0; k < polys.size(); k++) {
-                if(polys[k].intersect(ray.direction, ray.origin)) {
+                if(polys.at(k)->intersect(ray.direction, ray.origin)) {
                     pixels[j][i][0] = ray.Rs * 255;
                     pixels[j][i][1] = ray.Bs * 255;
                     pixels[j][i][2] = ray.Gs * 255;
@@ -56,18 +61,13 @@ int main() {
                 pixels[j][i][2] = 0.753 * 255;
             }
         }
-        cout << "Time : " << i << endl;
     }
 
-
-
     /** Write pixels out to file **/
-
     FILE *f = fopen("hide.ppm","wb");
     fprintf(f, "P6\n%d %d\n%d\n", ray.Nx, ray.Ny, 255);
     fwrite(pixels, 1, ray.Nx*ray.Ny*3, f);
     fclose(f);
-
 
     return 0;
 }

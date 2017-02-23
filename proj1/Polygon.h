@@ -31,13 +31,12 @@ public:
     //Constructor
     Polygon() : Shape(){};
 
+    Polygon(std::vector<SlVector3>);
+
     //Destructor
     ~Polygon(){};
 
-    //Creates vertice struct and inserts into vert vector
-    void insertVertices(double, double, double);
-
-    bool intersect(SlVector3, SlVector3);
+    virtual bool intersect(SlVector3, SlVector3);
 
 private:
 

@@ -34,6 +34,7 @@ public:
 
     std::vector<Polygon> polygons;
     std::vector<Sphere> spheres;
+    std::vector<Shape *> shapes;
 
     //Fill color and shading parameters
     //Red Green Blue Kd Ks Shine T refraction_index
@@ -70,6 +71,8 @@ public:
 
 
     std::vector<Sphere> getSpheres();
+
+    std::vector<Shape *> getGeometry();
 
 private:
 

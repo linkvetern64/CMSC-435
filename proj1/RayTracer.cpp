@@ -28,7 +28,7 @@ RayTracer::~RayTracer() {}
 
 
 void RayTracer::init(std::string filepath){
-    std::vector<Shape> shapes;
+
     std::string line;
     int tokenSize = 8;
     std::string tokens[8];
@@ -93,8 +93,8 @@ void RayTracer::init(std::string filepath){
                     //For populating Polygons
                 else if(!cmp.compare("p")){
                     int polyCount = atoi(tokens[1].data());
-                    Polygon polygon;
-                    polygon.type = "polygon";
+                    std::vector<SlVector3> vertices;
+
                     for(int m = 0; m < polyCount; m++){
 
                         getline(file, line);
@@ -105,17 +105,16 @@ void RayTracer::init(std::string filepath){
                             tokenizer >> tokens[i];
                             i++;
                         }
-                        polygon.insertVertices(atof(tokens[0].data()), atof(tokens[1].data()), atof(tokens[2].data()));
+                        vertices.push_back(SlVector3(atof(tokens[0].data()), atof(tokens[1].data()), atof(tokens[2].data())));
                     }
-                    polygons.push_back(polygon);
+                    //polygons.push_back(polygon);
+                    shapes.push_back(new Polygon(vertices));
                     break;
                 }
 
                     //For computing Spheres
                 else if(!cmp.compare("s")){
-                    Sphere sphere;
-                    sphere.type = "sphere";
-                    spheres.push_back(Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())));
+                    shapes.push_back(new Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())));
                     break;
                 }
             }
@@ -156,4 +155,8 @@ std::vector<Polygon> RayTracer::getTriangles(){
 
 std::vector<Sphere> RayTracer::getSpheres(){
     return spheres;
+}
+
+std::vector<Shape *> RayTracer::getGeometry(){
+    return shapes;
 }
