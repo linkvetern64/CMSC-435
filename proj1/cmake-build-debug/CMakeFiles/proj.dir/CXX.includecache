@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/SlVector.h
-cmath
--
-cstdlib
--
-iostream
--
-
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 cmath
 -
@@ -33,8 +25,10 @@ iostream
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Polygon.h
 vector
 -
-../common/SlVector.h
-/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/SlVector.h
+../common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
+Shape.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Shape.h
 
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.cpp
 iostream
@@ -43,12 +37,18 @@ RayTracer.h
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.h
 math.h
 -
-../common/SlVector.h
-/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/SlVector.h
+../common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.h
-../common/SlVector.h
-/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/SlVector.h
+../common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
+
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Shape.cpp
+Shape.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Shape.h
+
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Shape.h
 
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.cpp
 Sphere.h

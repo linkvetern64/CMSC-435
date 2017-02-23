@@ -31,8 +31,8 @@ int main() {
     ifstream file;
     RayTracer ray;
     string line;
-    //string filepath = "tetra-3.nff";
-    string filepath = "balls.nff";
+    string filepath = "tetra-3.nff";
+    //string filepath = "balls.nff";
     string tokens[8];
     vector<Polygon> polygons;
     vector<Sphere> spheres;

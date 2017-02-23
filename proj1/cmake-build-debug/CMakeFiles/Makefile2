@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-deb
 CMakeFiles/proj.dir/all:
 	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/depend
 	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target proj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target proj"
 .PHONY : CMakeFiles/proj.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/proj.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/proj.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/proj.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/proj.dir/rule

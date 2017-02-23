@@ -177,6 +177,33 @@ RayTracer.cpp.s:
 	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/RayTracer.cpp.s
 .PHONY : RayTracer.cpp.s
 
+Shape.o: Shape.cpp.o
+
+.PHONY : Shape.o
+
+# target to build an object file
+Shape.cpp.o:
+	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/Shape.cpp.o
+.PHONY : Shape.cpp.o
+
+Shape.i: Shape.cpp.i
+
+.PHONY : Shape.i
+
+# target to preprocess a source file
+Shape.cpp.i:
+	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/Shape.cpp.i
+.PHONY : Shape.cpp.i
+
+Shape.s: Shape.cpp.s
+
+.PHONY : Shape.s
+
+# target to generate assembly for a file
+Shape.cpp.s:
+	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/Shape.cpp.s
+.PHONY : Shape.cpp.s
+
 Sphere.o: Sphere.cpp.o
 
 .PHONY : Sphere.o
@@ -246,6 +273,9 @@ help:
 	@echo "... RayTracer.o"
 	@echo "... RayTracer.i"
 	@echo "... RayTracer.s"
+	@echo "... Shape.o"
+	@echo "... Shape.i"
+	@echo "... Shape.s"
 	@echo "... Sphere.o"
 	@echo "... Sphere.i"
 	@echo "... Sphere.s"

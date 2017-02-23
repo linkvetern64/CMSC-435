@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/proj.dir/RayTracer.cpp.o"
   "CMakeFiles/proj.dir/Polygon.cpp.o"
   "CMakeFiles/proj.dir/Sphere.cpp.o"
+  "CMakeFiles/proj.dir/Shape.cpp.o"
   "proj.pdb"
   "proj.exe"
   "libproj.dll.a"

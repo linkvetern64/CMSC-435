@@ -9,9 +9,9 @@
 
 #include <vector>
 #include "../common/slVector.H"
+#include "Shape.h"
 
-
-class Polygon {
+class Polygon : public Shape{
 
 public:
 
@@ -24,16 +24,14 @@ public:
 
 
     //Constructor
-    Polygon();
+    Polygon() : Shape(){};
 
     //Destructor
-    ~Polygon();
+    ~Polygon(){};
 
     //Creates vertice struct and inserts into vert vector
     void insertVertices(double, double, double);
 
-    //Prints vertices in struct vector
-    void printVertices(void);
 
     std::vector<SlVector3> getVectors(void);
 

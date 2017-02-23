@@ -1,7 +1,6 @@
 //
 // Created by Josh on 2/2/2017.
 //
-
 #include "Polygon.h"
 #include <vector>
 #include <iostream>
@@ -10,13 +9,13 @@
  * Constructor for Polygon class
  * @return None
  */
-Polygon::Polygon(){}
+//Polygon::Polygon(){}
 
 /**
  * Destructors for Polygon class
  * @return None
  */
-Polygon::~Polygon(){}
+//Polygon::~Polygon(){}
 
 /**
  * Creates a new vertice struct and insert it into that polygons vertice vector
@@ -30,14 +29,4 @@ void Polygon::insertVertices(double x, double y, double z){
 
 std::vector<SlVector3> Polygon::getVectors(){
     return vertex;
-}
-
-/**
- * Prints all vertices within vertice vector
- */
-void Polygon::printVertices(){
-    for(int i = 0; i < vertex.size(); i++){
-        printf(" Poly Vertices: %f, %f, %f\n", vertex.at(i).x(), vertex.at(i).y(), vertex.at(i).z() );
-    }
-    std::cout << std::endl;
 }
