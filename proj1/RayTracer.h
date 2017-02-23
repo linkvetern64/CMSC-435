@@ -5,24 +5,40 @@
 #ifndef PROJ_RAYTRACER_H
 #define PROJ_RAYTRACER_H
 
+/*Standard includes*/
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <stdlib.h>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <math.h>
+#include <string>
+
+/*Custom Includes*/
+#include "Shape.h"
+#include "Sphere.h"
+#include "Polygon.h"
 #include "../common/slVector.H"
 
 class RayTracer {
+
 public:
     /*Public Variables*/
 
-    double L, B, R, T, d, angle, m;
+    std::ifstream file;
 
     SlVector3 from, up, w, u, v, at, e;
-
-
-    double u_pos, v_pos;
-    double rad_angle;
     SlVector3 direction;
     SlVector3 origin;
-    double beta, gamma, t, M;
-    double a0, b0, c0, d0, e0, f0, g0, h0, i0, j0, k0, l0;
 
+    //Fill color and shading parameters
+    //Red Green Blue Kd Ks Shine T refraction_index
+    double Rs, Gs, Bs;
+    double L, B, R, T, d, angle, m;
+    double u_pos, v_pos;
+    double rad_angle;
 
 
     //Hither
@@ -30,26 +46,23 @@ public:
     //Resolution
     int Nx, Ny;
 
-
-    //Fill color and shading parameters
-    //Red Green Blue Kd Ks Shine T refraction_index
-    double Rs, Gs, Bs;
-
     /*Constructor*/
     RayTracer();
 
     /*Destructor*/
     ~RayTracer();
 
-    void getBackgroundColor(void);
-
-    //Prints image to ppm file
-    void printImage(void);
-
-
-    void init(void);
-
-    bool triangleIntersect(SlVector3, SlVector3, SlVector3, int, int);
+    /**
+     * @name - init
+     * @constraints:
+     * Param must be a .nff file with proper formatting.
+     * Checks will not be done to ensure a proper file, unknown results
+     * may occur.
+     * @desc:
+     * Parses NFF file, will compute camera basis and all redundant values
+     * that will be used by the RayTracer
+     */
+    std::vector<Shape> init(std::string);
 
 private:
 

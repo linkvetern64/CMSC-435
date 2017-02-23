@@ -3,9 +3,10 @@
 //
 
 #include <iostream>
-#include "RayTracer.h"
 #include <math.h>
-#include "../common/slVector.H"
+
+
+#include "RayTracer.h"
 
 #define PI 3.14159265
 
@@ -25,10 +26,103 @@ RayTracer::RayTracer() {
  */
 RayTracer::~RayTracer() {}
 
-void RayTracer::getBackgroundColor(){
-}
 
-void RayTracer::init(){
+std::vector<Shape> RayTracer::init(std::string filepath){
+    std::vector<Shape> shapes;
+    std::string line;
+    int tokenSize = 8;
+    std::string tokens[8];
+
+    /** Parse NFF File*/
+    file.open(filepath.c_str());
+
+    if(!file){
+        std::cout << "File: " << filepath << " Failed to open." << std::endl;
+    }
+
+    if(file.is_open()) {
+        while (getline(file, line)) {
+            std::stringstream tokenizer(line);
+            int i = 0;
+            //break apart string into tokens
+            while(tokenizer.good() && i < tokenSize){
+                tokenizer >> tokens[i];
+                i++;
+            }
+
+            //Place tokens into RayTracer object
+            for(int j = 0; j < i; j++){
+                std::string cmp = tokens[0];
+                if(!cmp.compare("b")){
+
+                    break;
+                }
+                else if(!cmp.compare("from")){
+                    from = SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data()));
+                    break;
+                }
+                else if(!cmp.compare("at")){
+                    at = SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data()));
+                    break;
+                }
+                else if(!cmp.compare("up")){
+                    up = SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data()));
+                    break;
+                }
+                else if(!cmp.compare("angle")){
+                    angle = atoi(tokens[1].data());
+                    break;
+                }
+                else if(!cmp.compare("hither")){
+                    hither = atoi(tokens[1].data());
+                    break;
+                }
+                    //Ex: 512x512 pixesl
+                else if(!cmp.compare("resolution")){
+                    Nx = atoi(tokens[1].data());
+                    Ny = atoi(tokens[2].data());
+                    break;
+                }
+                    //Stores the last fill color
+                else if(!cmp.compare("f")){
+                    Rs = atof(tokens[1].data());
+                    Gs = atof(tokens[2].data());
+                    Bs = atof(tokens[3].data());
+                    break;
+                }
+                    //For populating Polygons
+                else if(!cmp.compare("p")){
+                    int polyCount = atoi(tokens[1].data());
+                    Polygon polygon;
+                    polygon.type = "polygon";
+                    for(int m = 0; m < polyCount; m++){
+
+                        getline(file, line);
+                        std::stringstream tokenizer(line);
+                        int i = 0;
+                        //break apart string into tokens
+                        while(tokenizer.good() && i < tokenSize){
+                            tokenizer >> tokens[i];
+                            i++;
+                        }
+                        polygon.insertVertices(atof(tokens[0].data()), atof(tokens[1].data()), atof(tokens[2].data()));
+                    }
+                    shapes.push_back(polygon);
+                    break;
+                }
+
+                    //For computing Spheres
+                else if(!cmp.compare("s")){
+                    Sphere sphere;
+                    sphere.type = "sphere";
+                    shapes.push_back(Sphere(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data()), atof(tokens[4].data())));
+                    break;
+                }
+            }
+        }
+    }
+    file.close();
+
     /** Begin Computation **/
 
     /**Eye point vector**/
@@ -54,60 +148,6 @@ void RayTracer::init(){
     R = T = m;
 
     /** End Computation **/
-}
 
-bool RayTracer::triangleIntersect(SlVector3 Av, SlVector3 Bv, SlVector3 Cv, int i, int j){
-
-    /** calculates pixel location in world space **/
-    u_pos = L + (((R - L) * (i + 0.5)) / Nx );
-    v_pos = B + (((T - B) * (j + 0.5)) / Ny );
-
-    /* Vector D */
-    direction = ((-d * w) + (u_pos * u) + (v_pos * v));
-
-    /* Vector E*/
-    origin = e;
-
-    /** Compute Cramer Rule**/
-
-    a0 = Av.x() - Bv.x();
-    b0 = Av.y() - Bv.y();
-    c0 = Av.z() - Bv.z();
-    d0 = Av.x() - Cv.x();
-    e0 = Av.y() - Cv.y();
-    f0 = Av.z() - Cv.z();
-    g0 = direction.x();
-    h0 = direction.y();
-    i0 = direction.z();
-    j0 = Av.x() - origin.x();
-    k0 = Av.y() - origin.y();
-    l0 = Av.z() - origin.z();
-
-    M = a0*(e0*i0 - h0*f0) + b0*(g0*f0 - d0*i0) + c0*(d0*h0 - e0*g0);
-
-    /** Compute T **/
-
-    t = -(f0*(a0*k0 - j0*b0) + e0*(j0*c0 - a0*l0) + d0*(b0*l0 - k0*c0)) / M;
-
-    if( t < 0 || t > 100){
-        return false;
-    }
-
-    /** Compute Gamma **/
-
-    gamma = (i0*(a0*k0 - j0*b0) + h0*(j0*c0 - a0*l0) + g0*(b0*l0 - k0*c0)) / M;
-
-    if( gamma < 0 || gamma > 1){
-        return false;
-    }
-
-    /** Compute Beta **/
-
-    beta =  (j0*(e0*i0 - h0*f0) + k0*(g0*f0 - d0*i0) + l0*(d0*h0 - e0*g0)) / M;
-
-    if(beta < 0 || beta > (1 - gamma)){
-        return false;
-    }
-
-    return true;
+    return shapes;
 }

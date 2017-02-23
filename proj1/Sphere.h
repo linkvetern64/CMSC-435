@@ -6,15 +6,17 @@
 #define PROJ_SPHERE_H
 
 
-class Sphere {
+#include "Shape.h"
+
+class Sphere  : public Shape{
     public:
         double x, y, z, radius;
 
-
+        Sphere();
         Sphere(double, double, double, double);
+
         ~Sphere();
 
-        bool checkIntersect(void);
 };
 
 

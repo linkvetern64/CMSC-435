@@ -3,3 +3,7 @@
 //
 
 #include "Shape.h"
+
+std::string Shape::getType(){
+    return type;
+}

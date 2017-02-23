@@ -5,9 +5,15 @@
 #ifndef PROJ_SHAPE_H
 #define PROJ_SHAPE_H
 
+#include "../common/slVector.H"
+
+
 class Shape{
 
 public:
+
+    std::string type;
+    double RED, GREEN, BLUE;
 
     //Constructor for Super Class Shape
     Shape(){};
@@ -15,9 +21,7 @@ public:
     //Destructor for Super Class Shape
     ~Shape(){};
 
-
-private:
-
+    std::string getType(void);
 
 };
 

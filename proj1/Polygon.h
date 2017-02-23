@@ -7,16 +7,21 @@
 
 #define PI 3.14159265
 
-#include <vector>
-#include "../common/slVector.H"
 #include "Shape.h"
+#include "../common/slVector.H"
 
-class Polygon : public Shape{
+#include <vector>
+
+
+class Polygon : public Shape {
 
 public:
 
     //Total vertices of polygons
     int numVertices;
+
+    double beta, gamma, t, M;
+    double a0, b0, c0, d0, e0, f0, g0, h0, i0, j0, k0, l0;
 
     //Vector containing structs of vertices
     //Scalable beyond 3 given coordinates
@@ -32,11 +37,10 @@ public:
     //Creates vertice struct and inserts into vert vector
     void insertVertices(double, double, double);
 
-
-    std::vector<SlVector3> getVectors(void);
+    bool intersect(SlVector3, SlVector3);
 
 private:
-    //Nonion rings
+
 };
 
 

@@ -3,7 +3,10 @@
 //
 
 #include "Sphere.h"
-#include "../common/slVector.H"
+
+Sphere::Sphere(){
+    //default constructor
+}
 
 Sphere::Sphere(double x, double y, double z, double radius){
     this->x = x;
@@ -13,10 +16,3 @@ Sphere::Sphere(double x, double y, double z, double radius){
 }
 
 Sphere::~Sphere(){}
-
-bool checkIntersect(){
-
-
-
-    return true;
-}
