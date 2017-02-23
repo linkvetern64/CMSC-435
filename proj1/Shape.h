@@ -23,6 +23,8 @@ public:
 
     std::string getType(void);
 
+    bool intersect(SlVector3, SlVector3);
+
 };
 
 #endif //PROJ_SHAPE_H

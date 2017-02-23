@@ -7,16 +7,19 @@
 
 
 #include "Shape.h"
+#include "../common/slVector.H"
 
 class Sphere  : public Shape{
     public:
-        double x, y, z, radius;
+        SlVector3 C;
+        double radius;
 
         Sphere();
-        Sphere(double, double, double, double);
+        Sphere(SlVector3, double);
 
         ~Sphere();
 
+        bool intersect(SlVector3, SlVector3);
 };
 
 

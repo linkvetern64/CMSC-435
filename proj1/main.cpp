@@ -10,13 +10,10 @@ int main() {
 
 
     RayTracer ray;
-    string filepath = "tetra-3.nff";
-    //string filepath = "balls.nff";
+    //string filepath = "tetra-3.nff";
+    string filepath = "balls.nff";
 
-    vector<Shape> shapes = ray.init(filepath);
-
-    cout << shapes.size() << endl;
-
+    ray.init(filepath);
 
     unsigned char pixels[ray.Nx][ray.Ny][3];
 
@@ -39,24 +36,29 @@ int main() {
             /* Vector E*/
             ray.origin = ray.e;
 
+            //vector<Polygon> polys = ray.getTriangles();
+            vector<Sphere> polys = ray.getSpheres();
+
+            bool inter = false;
             /** Check each Shape object in the vector */
-            for (int k = 0; k < shapes.size(); k++) {
-                if(shapes[k].getType().compare("polygon")){
-                    /*if(shapes.at(k).intersects(ray)){
-                        pixels[j][i][0] = ray.Rs * 255;
-                        pixels[j][i][1] = ray.Bs * 255;
-                        pixels[j][i][2] = ray.Gs * 255;
-                        break;
-                    }
-                    else{
-                        pixels[j][i][0] = 0.078 * 255;
-                        pixels[j][i][1] = 0.361 * 255;
-                        pixels[j][i][2] = 0.753 * 255;
-                    }*/
+            for (int k = 0; k < polys.size(); k++) {
+                if(polys[k].intersect(ray.direction, ray.origin)) {
+                    pixels[j][i][0] = ray.Rs * 255;
+                    pixels[j][i][1] = ray.Bs * 255;
+                    pixels[j][i][2] = ray.Gs * 255;
+                    inter = true;
+                    break;
                 }
             }
+            if(!inter){
+                pixels[j][i][0] = 0.078 * 255;
+                pixels[j][i][1] = 0.361 * 255;
+                pixels[j][i][2] = 0.753 * 255;
+            }
         }
+        cout << "Time : " << i << endl;
     }
+
 
 
     /** Write pixels out to file **/

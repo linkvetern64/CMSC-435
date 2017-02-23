@@ -26,12 +26,14 @@ class RayTracer {
 
 public:
     /*Public Variables*/
-
     std::ifstream file;
 
     SlVector3 from, up, w, u, v, at, e;
     SlVector3 direction;
     SlVector3 origin;
+
+    std::vector<Polygon> polygons;
+    std::vector<Sphere> spheres;
 
     //Fill color and shading parameters
     //Red Green Blue Kd Ks Shine T refraction_index
@@ -62,7 +64,12 @@ public:
      * Parses NFF file, will compute camera basis and all redundant values
      * that will be used by the RayTracer
      */
-    std::vector<Shape> init(std::string);
+    void init(std::string);
+
+    std::vector<Polygon> getTriangles();
+
+
+    std::vector<Sphere> getSpheres();
 
 private:
 

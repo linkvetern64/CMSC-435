@@ -27,7 +27,7 @@ RayTracer::RayTracer() {
 RayTracer::~RayTracer() {}
 
 
-std::vector<Shape> RayTracer::init(std::string filepath){
+void RayTracer::init(std::string filepath){
     std::vector<Shape> shapes;
     std::string line;
     int tokenSize = 8;
@@ -107,7 +107,7 @@ std::vector<Shape> RayTracer::init(std::string filepath){
                         }
                         polygon.insertVertices(atof(tokens[0].data()), atof(tokens[1].data()), atof(tokens[2].data()));
                     }
-                    shapes.push_back(polygon);
+                    polygons.push_back(polygon);
                     break;
                 }
 
@@ -115,7 +115,7 @@ std::vector<Shape> RayTracer::init(std::string filepath){
                 else if(!cmp.compare("s")){
                     Sphere sphere;
                     sphere.type = "sphere";
-                    shapes.push_back(Sphere(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data()), atof(tokens[4].data())));
+                    spheres.push_back(Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())));
                     break;
                 }
             }
@@ -148,6 +148,12 @@ std::vector<Shape> RayTracer::init(std::string filepath){
     R = T = m;
 
     /** End Computation **/
+}
 
-    return shapes;
+std::vector<Polygon> RayTracer::getTriangles(){
+    return polygons;
+}
+
+std::vector<Sphere> RayTracer::getSpheres(){
+    return spheres;
 }
