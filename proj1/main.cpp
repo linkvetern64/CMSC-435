@@ -7,25 +7,34 @@
 #include "Shape.h"
 
 using namespace std;
-int main() {
+int main(int argc, char *argv[]) {
 
     /**
      * Todo:  Set up generic fill color for each object
-     *        Set up file passing in CMD line arguments
      *        Keep on optimizing fam
      */
 
     RayTracer ray;
-    string filepath = "tetra-3.nff";
-    //string filepath = "balls.nff";
+    string filepath;
+    vector<Shape *> polys;
 
+    /** Assign filepath to argument, if no argument assign default tetra-3.nff*/
+    if(argc > 1){
+        filepath = argv[1];
+    }
+    else{
+        filepath = "tetra-3.nff";
+        //filepath = "balls.nff";
+    }
+
+    /** Creates redundant calculates and initializes camera basis*/
     ray.init(filepath);
 
-    vector<Shape *> polys  = ray.getGeometry();
+    /** Pushes all active geometry into a vector<Shape>*/
+    polys  = ray.getGeometry();
     unsigned char pixels[ray.Nx][ray.Ny][3];
 
     for(int i = 0; i < ray.Nx; i++) {
-
         for (int j = 0; j < ray.Ny; j++) {
             /** Compute pixels here**/
             /* Calculate pixel location in world space
@@ -61,6 +70,7 @@ int main() {
                 pixels[j][i][2] = 0.753 * 255;
             }
         }
+        cout << "Time : " << i << endl;
     }
 
     /** Write pixels out to file **/
