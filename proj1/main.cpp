@@ -40,7 +40,6 @@ int main(int argc, char *argv[]) {
     for(int i = 0; i < ray.Nx; i++) {
         for (int j = 0; j < ray.Ny; j++) {
 
-
             /** calculates pixel location in world space **/
             ray.u_pos = ray.L + (((ray.R - ray.L) * (i + 0.5)) / ray.Nx);
             ray.v_pos = ray.B + (((ray.T - ray.B) * (j + 0.5)) / ray.Ny);
@@ -68,6 +67,7 @@ int main(int argc, char *argv[]) {
                 pixels[j][i][2] = 0.753 * 255;
             }
         }
+        cout << "Time : " << i << endl;
     }
 
     /** Write pixels out to file **/
