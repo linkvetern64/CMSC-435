@@ -20,6 +20,7 @@
 #include "Shape.h"
 #include "Sphere.h"
 #include "Polygon.h"
+#include "Surface.h"
 #include "../common/slVector.H"
 
 class RayTracer {
@@ -27,6 +28,8 @@ class RayTracer {
 public:
     /*Public Variables*/
     std::ifstream file;
+
+    Surface background;
 
     SlVector3 from, up, w, u, v, at, e;
     SlVector3 direction;
@@ -69,10 +72,13 @@ public:
 
     std::vector<Polygon> getTriangles();
 
-
     std::vector<Sphere *> getSpheres();
 
     std::vector<Shape *> getGeometry();
+
+    void setBackground(double, double, double);
+
+    void pushGeometry(Shape*);
 
 private:
 

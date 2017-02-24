@@ -9,11 +9,12 @@ class Surface{
 
 public:
 
-    double red, green, blue, Kd, Ks, Shine, T, index_of_refraction;
 
     Surface();
 
     ~Surface();
+
+    void setRGB(double, double, double);
 
 private:
 

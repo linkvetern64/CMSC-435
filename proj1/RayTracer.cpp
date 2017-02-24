@@ -60,7 +60,7 @@ void RayTracer::init(std::string filepath){
             for(int j = 0; j < i; j++){
                 std::string cmp = tokens[0];
                 if(!cmp.compare("b")){
-
+                    //setBackground(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data()));
                     break;
                 }
                 else if(!cmp.compare("from")){
@@ -91,24 +91,24 @@ void RayTracer::init(std::string filepath){
                 }
                     //Stores the last fill color
                 else if(!cmp.compare("f")){
-                    Rs = atof(tokens[1].data());
-                    Gs = atof(tokens[2].data());
-                    Bs = atof(tokens[3].data());
+                    /**Todo: Make a new Surface class, then pass that pointer to
+                     * the new shape being pushed.
+                     */
+                     /*
+                    R = atof(tokens[1].data());
+                    G = atof(tokens[2].data());
+                    B = atof(tokens[3].data());
+                    */
                     break;
                 }
 
-                    //For computing Spheres
-                else if(!cmp.compare("s")){
-                    shapes.push_back(new Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())));
-                    break;
-                }
+                /** Adding Geometry goes below */
                     //For populating Polygons
                 else if(!cmp.compare("p")){
                     int polyCount = atoi(tokens[1].data());
                     std::vector<SlVector3> vertices;
-
+                    //pushes P N, N number of vertices into the vector for dynamic complex geometry
                     for(int m = 0; m < polyCount; m++){
-
                         getline(file, line);
                         std::stringstream tokenizer(line);
                         int i = 0;
@@ -119,11 +119,16 @@ void RayTracer::init(std::string filepath){
                         }
                         vertices.push_back(SlVector3(atof(tokens[0].data()), atof(tokens[1].data()), atof(tokens[2].data())));
                     }
-                    //polygons.push_back(polygon);
                     shapes.push_back(new Polygon(vertices));
+                    //shapes.at(shapes.size() - 1)->surface.setRGB(R,G,B);
                     break;
                 }
-
+                    //For computing Spheres
+                else if(!cmp.compare("s")){
+                    shapes.push_back(new Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())));
+                    //shapes.at(shapes.size() - 1)->surface.setRGB(R,G,B);
+                    break;
+                }
             }
         }
     }
@@ -166,4 +171,9 @@ std::vector<Sphere *> RayTracer::getSpheres(){
 
 std::vector<Shape *> RayTracer::getGeometry(){
     return shapes;
+}
+
+void RayTracer::pushGeometry(Shape * shape){
+    shapes.push_back(shape);
+
 }

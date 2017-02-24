@@ -6,16 +6,14 @@
 #define PROJ_SHAPE_H
 
 #include "../common/slVector.H"
-#include "Surface.h"
 
 class Shape{
 
 public:
 
     std::string type;
-    double RED, GREEN, BLUE;
 
-
+    double R,G,B;
 
     //Constructor for Super Class Shape
     Shape(){};
@@ -28,6 +26,7 @@ public:
     //Tests if pixel ray intersects geometry
     virtual bool intersect(SlVector3, SlVector3);
 
+    void setRBG(double, double, double);
 };
 
 #endif //PROJ_SHAPE_H

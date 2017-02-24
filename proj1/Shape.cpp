@@ -8,6 +8,7 @@ std::string Shape::getType(){
     return type;
 }
 
+
 bool Shape::intersect(SlVector3, SlVector3) {
     return false;
 }

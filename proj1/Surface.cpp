@@ -11,6 +11,6 @@ Surface::Surface(){
 
 
 //Default Destructor
-Surface::~Surface(){
+Surface::~Surface() {
 
 }

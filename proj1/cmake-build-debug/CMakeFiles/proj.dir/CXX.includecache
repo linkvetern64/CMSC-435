@@ -59,6 +59,8 @@ Sphere.h
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.h
 Polygon.h
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Polygon.h
+Surface.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Surface.h
 ../common/slVector.H
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 
@@ -79,6 +81,12 @@ Shape.h
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Shape.h
 ../common/slVector.H
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
+
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Surface.cpp
+Surface.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Surface.h
+
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Surface.h
 
 /cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/main.cpp
 RayTracer.h
