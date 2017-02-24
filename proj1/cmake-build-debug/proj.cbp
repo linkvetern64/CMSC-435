@@ -104,6 +104,12 @@
 		<Unit filename="/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.h">
 			<Option target="proj"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Surface.cpp">
+			<Option target="proj"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Surface.h">
+			<Option target="proj"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/main.cpp">
 			<Option target="proj"/>
 		</Unit>

@@ -231,6 +231,33 @@ Sphere.cpp.s:
 	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/Sphere.cpp.s
 .PHONY : Sphere.cpp.s
 
+Surface.o: Surface.cpp.o
+
+.PHONY : Surface.o
+
+# target to build an object file
+Surface.cpp.o:
+	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/Surface.cpp.o
+.PHONY : Surface.cpp.o
+
+Surface.i: Surface.cpp.i
+
+.PHONY : Surface.i
+
+# target to preprocess a source file
+Surface.cpp.i:
+	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/Surface.cpp.i
+.PHONY : Surface.cpp.i
+
+Surface.s: Surface.cpp.s
+
+.PHONY : Surface.s
+
+# target to generate assembly for a file
+Surface.cpp.s:
+	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/Surface.cpp.s
+.PHONY : Surface.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -279,6 +306,9 @@ help:
 	@echo "... Sphere.o"
 	@echo "... Sphere.i"
 	@echo "... Sphere.s"
+	@echo "... Surface.o"
+	@echo "... Surface.i"
+	@echo "... Surface.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

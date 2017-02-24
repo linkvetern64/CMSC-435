@@ -26,7 +26,13 @@ RayTracer::RayTracer() {
  */
 RayTracer::~RayTracer() {}
 
-
+/**
+ * @name init
+ * @param filepath - type string
+ * @desc
+ * Parses the NFF file passed in by the command line or default file.
+ * Creates Shape derived classes of types passed in by the NFF file
+ */
 void RayTracer::init(std::string filepath){
 
     std::string line;
@@ -90,6 +96,12 @@ void RayTracer::init(std::string filepath){
                     Bs = atof(tokens[3].data());
                     break;
                 }
+
+                    //For computing Spheres
+                else if(!cmp.compare("s")){
+                    shapes.push_back(new Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())));
+                    break;
+                }
                     //For populating Polygons
                 else if(!cmp.compare("p")){
                     int polyCount = atoi(tokens[1].data());
@@ -112,11 +124,6 @@ void RayTracer::init(std::string filepath){
                     break;
                 }
 
-                    //For computing Spheres
-                else if(!cmp.compare("s")){
-                    shapes.push_back(new Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())));
-                    break;
-                }
             }
         }
     }
@@ -153,7 +160,7 @@ std::vector<Polygon> RayTracer::getTriangles(){
     return polygons;
 }
 
-std::vector<Sphere> RayTracer::getSpheres(){
+std::vector<Sphere *> RayTracer::getSpheres(){
     return spheres;
 }
 

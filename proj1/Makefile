@@ -18,6 +18,9 @@ Shape.o: Shape.cpp
 Sphere.o: Sphere.cpp
     g++ -c Sphere.cpp -I../common
 
+Surface.o: Surface.cpp
+    g++ -c Surface.cpp -I../common
+
 run:
 	./main
 

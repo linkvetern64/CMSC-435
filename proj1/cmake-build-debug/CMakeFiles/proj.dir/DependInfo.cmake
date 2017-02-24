@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/RayTracer.cpp" "/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles/proj.dir/RayTracer.cpp.o"
   "/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Shape.cpp" "/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles/proj.dir/Shape.cpp.o"
   "/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Sphere.cpp" "/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles/proj.dir/Sphere.cpp.o"
+  "/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/Surface.cpp" "/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles/proj.dir/Surface.cpp.o"
   "/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/main.cpp" "/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj1/cmake-build-debug/CMakeFiles/proj.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

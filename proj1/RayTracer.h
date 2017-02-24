@@ -33,7 +33,7 @@ public:
     SlVector3 origin;
 
     std::vector<Polygon> polygons;
-    std::vector<Sphere> spheres;
+    std::vector<Sphere *> spheres;
     std::vector<Shape *> shapes;
 
     //Fill color and shading parameters
@@ -70,7 +70,7 @@ public:
     std::vector<Polygon> getTriangles();
 
 
-    std::vector<Sphere> getSpheres();
+    std::vector<Sphere *> getSpheres();
 
     std::vector<Shape *> getGeometry();
 

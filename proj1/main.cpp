@@ -6,33 +6,40 @@
 #include "RayTracer.h"
 #include "Shape.h"
 
-using namespace std;
-int main() {
-
-    /**
+     /**
      * Todo:  Set up generic fill color for each object
-     *        Set up file passing in CMD line arguments
-     *        Keep on optimizing fam
+     * Todo:  Set up T intersection value
+     * Todo:  Texture class
+     * Todo:  Keep on optimizing fam
+     *
+     * BUG: Calculate closest T value to prevent graphical glitches
      */
+using namespace std;
+int main(int argc, char *argv[]) {
 
     RayTracer ray;
-    string filepath = "tetra-3.nff";
-    //string filepath = "balls.nff";
+    string filepath;
+    vector<Shape *> polys;
 
+    /** Assign filepath to argument, if no argument assign default tetra-3.nff*/
+     argc > 1 ? filepath = argv[1] : filepath = "tetra-3.nff";
+
+    /** Creates redundant calculates and initializes camera basis*/
     ray.init(filepath);
 
-    vector<Shape *> polys  = ray.getGeometry();
+    /** Pushes all active geometry into a vector<Shape>*/
+    polys  = ray.getGeometry();
     unsigned char pixels[ray.Nx][ray.Ny][3];
 
+    /** Compute pixels here**/
+    /* Calculate pixel location in world space
+    * Calculate ray from eye point through pixel into scene
+    * calculate ray-object intersections, choose closest T
+    * set pixel to that color
+    */
     for(int i = 0; i < ray.Nx; i++) {
-
         for (int j = 0; j < ray.Ny; j++) {
-            /** Compute pixels here**/
-            /* Calculate pixel location in world space
-            * Calculate ray from eye point through pixel into scene
-            * calculate ray-object intersections, choose closest T
-            * set pixel to that color
-            */
+
 
             /** calculates pixel location in world space **/
             ray.u_pos = ray.L + (((ray.R - ray.L) * (i + 0.5)) / ray.Nx);
