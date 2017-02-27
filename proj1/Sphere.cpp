@@ -15,6 +15,6 @@ Sphere::~Sphere(){
 
 bool Sphere::intersect(SlVector3 direction, SlVector3 origin){
     SlVector3 omc = (origin - C);
-    double disc = pow(dot(direction, omc),2) - (dot(direction, direction)) * (dot(omc,omc) - pow(radius, 2));
-    return disc > 0;
+    t = pow(dot(direction, omc),2) - (dot(direction, direction)) * (dot(omc,omc) - pow(radius, 2));
+    return t > 0;
 }

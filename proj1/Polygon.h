@@ -20,7 +20,7 @@ public:
     //Total vertices of polygons
     int numVertices;
 
-    double beta, gamma, t, M;
+    double beta, gamma, M;
     double a0, b0, c0, d0, e0, f0, g0, h0, i0, j0, k0, l0;
 
     //Vector containing structs of vertices

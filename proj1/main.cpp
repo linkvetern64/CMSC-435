@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     /** Assign filepath to argument, if no argument assign default tetra-3.nff*/
      argc > 1 ? filepath = argv[1] : filepath = "tetra-3.nff";
 
-    filepath = "test.nff";
+    filepath = "tetra-3.nff";
 
     /** Creates redundant calculates and initializes camera basis*/
     ray.init(filepath);
@@ -41,7 +41,6 @@ int main(int argc, char *argv[]) {
     */
     for(int i = 0; i < ray.Nx; i++) {
         for (int j = 0; j < ray.Ny; j++) {
-
             /** calculates pixel location in world space **/
             ray.u_pos = ray.L + (((ray.R - ray.L) * (i + 0.5)) / ray.Nx);
             ray.v_pos = ray.B + (((ray.T - ray.B) * (j + 0.5)) / ray.Ny);
@@ -51,25 +50,33 @@ int main(int argc, char *argv[]) {
 
             /* Vector E*/
             ray.origin = ray.e;
-            bool inter = false;
+
+            /* Temp Variables for intersection*/
+            int t_ind = -1;
+            double tmp_t = 100;
+
             /** Check each Shape object in the vector */
             for (int k = 0; k < polys.size(); k++) {
                 if(polys.at(k)->intersect(ray.direction, ray.origin)) {
-                    pixels[j][i][0] = .6 * 255;
-                    pixels[j][i][1] = .3 * 255;
-                    pixels[j][i][2] = .1 * 255;
-                    inter = true;
-                    break;
+                    /** the lowest T value, determines closest object to camera */
+                    if(tmp_t > polys.at(k)->t){
+                        tmp_t = polys.at(k)->t;
+                        t_ind = k;
+                    }
                 }
             }
-            if(!inter){
-
-                pixels[j][i][0] = 0.078 * 255;
-                pixels[j][i][1] = 0.361 * 255;
-                pixels[j][i][2] = 0.753 * 255;
+            //If an intersection occurred, set pixel to that color.  Otherwise set to BG color
+            if(t_ind >= 0){
+                pixels[j][i][0] = polys.at(t_ind)->red * 255;
+                pixels[j][i][1] = polys.at(t_ind)->green * 255;
+                pixels[j][i][2] = polys.at(t_ind)->blue * 255;
+            }
+            else{
+                pixels[j][i][0] = ray.BG_r * 255;
+                pixels[j][i][1] = ray.BG_g * 255;
+                pixels[j][i][2] = ray.BG_b * 255;
             }
         }
-        cout << "Time : " << i << endl;
     }
 
     /** Write pixels out to file **/

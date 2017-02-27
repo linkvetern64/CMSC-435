@@ -45,7 +45,7 @@ public:
     double L, B, R, T, d, angle, m;
     double u_pos, v_pos;
     double rad_angle;
-
+    double BG_r, BG_g, BG_b;
 
     //Hither
     int hither;
@@ -78,7 +78,7 @@ public:
 
     void setBackground(double, double, double);
 
-    void pushGeometry(Shape*);
+    void pushGeometry(Shape*, double, double, double);
 
 private:
 

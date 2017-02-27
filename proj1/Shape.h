@@ -13,8 +13,8 @@ public:
 
     std::string type;
 
-    double R,G,B;
-
+    double t;
+    double red, green, blue;
     //Constructor for Super Class Shape
     Shape(){};
 
@@ -27,6 +27,10 @@ public:
     virtual bool intersect(SlVector3, SlVector3);
 
     void setRBG(double, double, double);
+
+    double getRed();
+    double getGreen();
+    double getBlue();
 };
 
 #endif //PROJ_SHAPE_H

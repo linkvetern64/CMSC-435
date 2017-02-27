@@ -39,6 +39,8 @@ void RayTracer::init(std::string filepath){
     int tokenSize = 8;
     std::string tokens[8];
 
+    double local_r, local_g, local_b;
+
     /** Parse NFF File*/
     file.open(filepath.c_str());
 
@@ -60,7 +62,7 @@ void RayTracer::init(std::string filepath){
             for(int j = 0; j < i; j++){
                 std::string cmp = tokens[0];
                 if(!cmp.compare("b")){
-                    //setBackground(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data()));
+                    setBackground(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data()));
                     break;
                 }
                 else if(!cmp.compare("from")){
@@ -94,11 +96,10 @@ void RayTracer::init(std::string filepath){
                     /**Todo: Make a new Surface class, then pass that pointer to
                      * the new shape being pushed.
                      */
-                     /*
-                    R = atof(tokens[1].data());
-                    G = atof(tokens[2].data());
-                    B = atof(tokens[3].data());
-                    */
+                    local_r = atof(tokens[1].data());
+                    local_g = atof(tokens[2].data());
+                    local_b = atof(tokens[3].data());
+
                     break;
                 }
 
@@ -119,14 +120,12 @@ void RayTracer::init(std::string filepath){
                         }
                         vertices.push_back(SlVector3(atof(tokens[0].data()), atof(tokens[1].data()), atof(tokens[2].data())));
                     }
-                    shapes.push_back(new Polygon(vertices));
-                    //shapes.at(shapes.size() - 1)->surface.setRGB(R,G,B);
+                    pushGeometry(new Polygon(vertices), local_r, local_g, local_b);
                     break;
                 }
                     //For computing Spheres
                 else if(!cmp.compare("s")){
-                    shapes.push_back(new Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())));
-                    //shapes.at(shapes.size() - 1)->surface.setRGB(R,G,B);
+                    pushGeometry(new Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())), local_r, local_g, local_b);
                     break;
                 }
             }
@@ -173,7 +172,13 @@ std::vector<Shape *> RayTracer::getGeometry(){
     return shapes;
 }
 
-void RayTracer::pushGeometry(Shape * shape){
+void RayTracer::pushGeometry(Shape * shape, double red, double green, double blue){
+    shape->setRBG(red, green, blue);
     shapes.push_back(shape);
+}
 
+void RayTracer::setBackground(double red, double green, double blue){
+    this->BG_r = red;
+    this->BG_g = green;
+    this->BG_b = blue;
 }
