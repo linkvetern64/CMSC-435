@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Josh/CMSC-435/common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 cmath
 -
 cstdlib
@@ -14,27 +14,27 @@ cstdlib
 iostream
 -
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Polygon.cpp
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Polygon.cpp
 Polygon.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Polygon.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Polygon.h
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Polygon.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Polygon.h
 Shape.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Shape.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Shape.h
 ../common/slVector.H
-/cygdrive/c/Users/Josh/CMSC-435/common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 vector
 -
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/RayTracer.cpp
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/RayTracer.cpp
 iostream
 -
 math.h
 -
 RayTracer.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/RayTracer.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/RayTracer.h
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/RayTracer.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/RayTracer.h
 iostream
 -
 fstream
@@ -54,43 +54,41 @@ math.h
 string
 -
 Shape.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Shape.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Shape.h
 Sphere.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Sphere.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Sphere.h
 Polygon.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Polygon.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Polygon.h
 Surface.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Surface.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Surface.h
 ../common/slVector.H
-/cygdrive/c/Users/Josh/CMSC-435/common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Shape.cpp
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Shape.cpp
 Shape.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Shape.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Shape.h
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Shape.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Shape.h
 ../common/slVector.H
-/cygdrive/c/Users/Josh/CMSC-435/common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Sphere.cpp
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Sphere.cpp
 Sphere.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Sphere.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Sphere.h
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Sphere.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Sphere.h
 Shape.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Shape.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Shape.h
 ../common/slVector.H
-/cygdrive/c/Users/Josh/CMSC-435/common/slVector.H
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/common/slVector.H
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Surface.cpp
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Surface.cpp
 Surface.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Surface.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Surface.h
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Surface.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/Surface.h
 
-/cygdrive/c/Users/Josh/CMSC-435/proj2/main.cpp
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/main.cpp
 RayTracer.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/RayTracer.h
-Shape.h
-/cygdrive/c/Users/Josh/CMSC-435/proj2/Shape.h
+/cygdrive/c/Users/Josh/Desktop/CMSC-435/proj2/RayTracer.h
 

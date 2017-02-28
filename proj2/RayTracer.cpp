@@ -108,11 +108,13 @@ void RayTracer::init(std::string filepath){
                 else if(!cmp.compare("p") || !cmp.compare("pp")){
                     int polyCount = atoi(tokens[1].data());
                     std::vector<SlVector3> vertices;
+
                     //pushes P N, N number of vertices into the vector for dynamic complex geometry
                     for(int m = 0; m < polyCount; m++){
                         getline(file, line);
                         std::stringstream tokenizer(line);
                         int i = 0;
+
                         //break apart string into tokens
                         while(tokenizer.good() && i < tokenSize){
                             tokenizer >> tokens[i];
@@ -120,7 +122,15 @@ void RayTracer::init(std::string filepath){
                         }
                         vertices.push_back(SlVector3(atof(tokens[0].data()), atof(tokens[1].data()), atof(tokens[2].data())));
                     }
-                    pushGeometry(new Polygon(vertices), local_r, local_g, local_b);
+                    std::vector<SlVector3> tmp_vert;
+
+                    for(int ind = 1; ind < vertices.size() - 1; ind++){
+                        tmp_vert.push_back(vertices.at(0));
+                        tmp_vert.push_back(vertices.at(ind));
+                        tmp_vert.push_back(vertices.at(ind + 1));
+                        pushGeometry(new Polygon(tmp_vert), local_r, local_g, local_b);
+                        tmp_vert.clear();
+                    }
                     break;
                 }
                     //For computing Spheres
