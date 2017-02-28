@@ -7,12 +7,8 @@
 #include "Shape.h"
 
      /**
-     * Todo:  Set up generic fill color for each object
-     * Todo:  Set up T intersection value
      * Todo:  Texture class
-     * Todo:  Keep on optimizing fam
-     *
-     * BUG: Calculate closest T value to prevent graphical glitches
+     * Todo:  Add multi-vertice polygon intersection ability
      */
 using namespace std;
 int main(int argc, char *argv[]) {
@@ -24,7 +20,7 @@ int main(int argc, char *argv[]) {
     /** Assign filepath to argument, if no argument assign default tetra-3.nff*/
      argc > 1 ? filepath = argv[1] : filepath = "tetra-3.nff";
 
-    filepath = "tetra-3.nff";
+    filepath = "color-test.nff";
 
     /** Creates redundant calculates and initializes camera basis*/
     ray.init(filepath);
@@ -77,6 +73,7 @@ int main(int argc, char *argv[]) {
                 pixels[j][i][2] = ray.BG_b * 255;
             }
         }
+        cout << i << endl;
     }
 
     /** Write pixels out to file **/

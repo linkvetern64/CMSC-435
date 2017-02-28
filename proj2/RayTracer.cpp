@@ -105,7 +105,7 @@ void RayTracer::init(std::string filepath){
 
                 /** Adding Geometry goes below */
                     //For populating Polygons
-                else if(!cmp.compare("p")){
+                else if(!cmp.compare("p") || !cmp.compare("pp")){
                     int polyCount = atoi(tokens[1].data());
                     std::vector<SlVector3> vertices;
                     //pushes P N, N number of vertices into the vector for dynamic complex geometry
