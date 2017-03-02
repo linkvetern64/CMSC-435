@@ -11,10 +11,14 @@ Polygon::Polygon(std::vector<SlVector3> vertices) {
 
 bool Polygon::intersect(SlVector3 direction, SlVector3 origin){
 
-    /** Compute Cramer Rule**/
+    /** Compute Cramer Rule **/
     SlVector3 Av = vertex.at(0);
     SlVector3 Bv = vertex.at(1);
     SlVector3 Cv = vertex.at(2);
+
+    /** Computes Surface Normal **/
+    normal = cross(Bv - Av, Cv - Av);
+    normal = normalize(normal);
 
     a0 = Av.x() - Bv.x();
     b0 = Av.y() - Bv.y();
@@ -55,9 +59,7 @@ bool Polygon::intersect(SlVector3 direction, SlVector3 origin){
         return false;
     }
 
-    intersection = (origin * t) + direction;
-    normal = cross(direction, intersection);
-    normal = normalize(normal);
+    intersection = origin + direction * t;
 
     return true;
 }

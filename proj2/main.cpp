@@ -49,6 +49,7 @@ int main(int argc, char *argv[]) {
             /* Temp Variables for intersection*/
             int t_ind = -1;
             double tmp_t = 100;
+            double lightIntensity = 1 / sqrt(ray.lights.size());
 
             /** Check each Shape object in the vector */
             for (int k = 0; k < polys.size(); k++) {
@@ -62,10 +63,23 @@ int main(int argc, char *argv[]) {
             }
             //If an intersection occurred, set pixel to that color.  Otherwise set to BG color
             if(t_ind >= 0){
+                Shape * tmp = polys.at(t_ind);
                 //Calculate lighting and shading here.
-                pixels[j][i][0] = polys.at(t_ind)->red * 255;
-                pixels[j][i][1] = polys.at(t_ind)->green * 255;
-                pixels[j][i][2] = polys.at(t_ind)->blue * 255;
+                pixels[j][i][0] = tmp->red * 255;
+                pixels[j][i][1] = tmp->green * 255;
+                pixels[j][i][2] = tmp->blue * 255;
+
+                //for each light
+                for(int l_ind = 0; l_ind < ray.lights.size(); l_ind++){
+                    SlVector3 l = tmp->intersection  - ray.lights.at(l_ind);
+                    l = normalize(l);
+
+                    diffuse = max(0.0, dot(tmp->normal, l));
+
+                    pixels[j][i][0] += (tmp->Kd * tmp->red * diffuse) * lightIntensity * 4;
+                    pixels[j][i][1] += (tmp->Kd * tmp->green * diffuse) * lightIntensity * 10;
+                    pixels[j][i][2] += (tmp->Kd * tmp->blue * diffuse) * lightIntensity * 4;
+                }
             }
             else{
                 pixels[j][i][0] = ray.BG_r * 255;
@@ -73,6 +87,7 @@ int main(int argc, char *argv[]) {
                 pixels[j][i][2] = ray.BG_b * 255;
             }
         }
+        cout << i << endl;
     }
 
     /** Write pixels out to file **/
