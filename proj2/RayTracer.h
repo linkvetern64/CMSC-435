@@ -35,6 +35,8 @@ public:
     SlVector3 direction;
     SlVector3 origin;
 
+    std::vector<SlVector3> lights;
+
     std::vector<Polygon> polygons;
     std::vector<Sphere *> spheres;
     std::vector<Shape *> shapes;
@@ -78,7 +80,7 @@ public:
 
     void setBackground(double, double, double);
 
-    void pushGeometry(Shape*, double, double, double);
+    void pushGeometry(Shape*, std::vector<double>);
 
 private:
 

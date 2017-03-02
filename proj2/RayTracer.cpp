@@ -36,10 +36,12 @@ RayTracer::~RayTracer() {}
 void RayTracer::init(std::string filepath){
 
     std::string line;
-    int tokenSize = 8;
-    std::string tokens[8];
+    int tokenSize = 10;
+    std::string tokens[10];
+    std::vector<double> fill;
 
-    double local_r, local_g, local_b;
+    //local variables used for setting f parameters
+    double local_r, local_g, local_b, l_Kd, l_Ks, l_e, l_Kt, l_ir;
 
     /** Parse NFF File*/
     file.open(filepath.c_str());
@@ -85,6 +87,10 @@ void RayTracer::init(std::string filepath){
                     hither = atoi(tokens[1].data());
                     break;
                 }
+                else if(!cmp.compare("l")){
+                    lights.push_back(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())));
+                    break;
+                }
                     //Ex: 512x512 pixesl
                 else if(!cmp.compare("resolution")){
                     Nx = atoi(tokens[1].data());
@@ -96,10 +102,23 @@ void RayTracer::init(std::string filepath){
                     /**Todo: Make a new Surface class, then pass that pointer to
                      * the new shape being pushed.
                      */
-                    local_r = atof(tokens[1].data());
-                    local_g = atof(tokens[2].data());
-                    local_b = atof(tokens[3].data());
-
+                    fill.clear();
+                    //Red - 0
+                    fill.push_back(atof(tokens[1].data()));
+                    //Green - 1
+                    fill.push_back(atof(tokens[2].data()));
+                    //Blue - 2
+                    fill.push_back(atof(tokens[3].data()));
+                    //Kd - 3
+                    fill.push_back(atof(tokens[4].data()));
+                    //Ks - 4
+                    fill.push_back(atof(tokens[5].data()));
+                    //e - 5
+                    fill.push_back(atof(tokens[6].data()));
+                    //Kt - 6
+                    fill.push_back(atof(tokens[7].data()));
+                    //ir - 7
+                    fill.push_back(atof(tokens[8].data()));
                     break;
                 }
 
@@ -128,14 +147,14 @@ void RayTracer::init(std::string filepath){
                         tmp_vert.push_back(vertices.at(0));
                         tmp_vert.push_back(vertices.at(ind));
                         tmp_vert.push_back(vertices.at(ind + 1));
-                        pushGeometry(new Polygon(tmp_vert), local_r, local_g, local_b);
+                        pushGeometry(new Polygon(tmp_vert), fill);
                         tmp_vert.clear();
                     }
                     break;
                 }
                     //For computing Spheres
                 else if(!cmp.compare("s")){
-                    pushGeometry(new Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())), local_r, local_g, local_b);
+                    pushGeometry(new Sphere(SlVector3(atof(tokens[1].data()), atof(tokens[2].data()), atof(tokens[3].data())), atof(tokens[4].data())), fill);
                     break;
                 }
             }
@@ -182,8 +201,16 @@ std::vector<Shape *> RayTracer::getGeometry(){
     return shapes;
 }
 
-void RayTracer::pushGeometry(Shape * shape, double red, double green, double blue){
-    shape->setRBG(red, green, blue);
+void RayTracer::pushGeometry(Shape * shape, std::vector<double> fills){
+    shape->red = fills.at(0);
+    shape->green = fills.at(1);
+    shape->blue = fills.at(2);
+    shape->Kd = fills.at(3);
+    shape->Ks = fills.at(4);
+    shape->gloss = fills.at(5);
+    shape->Kt = fills.at(6);
+    shape->Ir = fills.at(7);
+
     shapes.push_back(shape);
 }
 

@@ -6,6 +6,7 @@
 #define PROJ_SHAPE_H
 
 #include "../common/slVector.H"
+#include <vector>
 
 class Shape{
 
@@ -13,8 +14,10 @@ public:
 
     std::string type;
 
+    SlVector3 intersection;
+    SlVector3 normal;
     double t;
-    double red, green, blue;
+    double red, green, blue, Kd, Ks, gloss, Kt, Ir;
     //Constructor for Super Class Shape
     Shape(){};
 
@@ -27,6 +30,8 @@ public:
     virtual bool intersect(SlVector3, SlVector3);
 
     void setRBG(double, double, double);
+
+    void setFill(std::vector<double>);
 
     double getRed();
     double getGreen();

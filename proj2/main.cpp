@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     /** Assign filepath to argument, if no argument assign default tetra-3.nff*/
      argc > 1 ? filepath = argv[1] : filepath = "tetra-3.nff";
 
-    filepath = "tetra-3.nff";
+    filepath = "teapot-3.nff";
 
     /** Creates redundant calculates and initializes camera basis*/
     ray.init(filepath);
@@ -33,6 +33,7 @@ int main(int argc, char *argv[]) {
     * calculate ray-object intersections, choose closest T
     * set pixel to that color
     */
+    double diffuse;
     for(int i = 0; i < ray.Nx; i++) {
         for (int j = 0; j < ray.Ny; j++) {
             /** calculates pixel location in world space **/
@@ -61,6 +62,7 @@ int main(int argc, char *argv[]) {
             }
             //If an intersection occurred, set pixel to that color.  Otherwise set to BG color
             if(t_ind >= 0){
+                //Calculate lighting and shading here.
                 pixels[j][i][0] = polys.at(t_ind)->red * 255;
                 pixels[j][i][1] = polys.at(t_ind)->green * 255;
                 pixels[j][i][2] = polys.at(t_ind)->blue * 255;

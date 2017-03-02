@@ -16,5 +16,10 @@ Sphere::~Sphere(){
 bool Sphere::intersect(SlVector3 direction, SlVector3 origin){
     SlVector3 omc = (origin - C);
     t = pow(dot(direction, omc),2) - (dot(direction, direction)) * (dot(omc,omc) - pow(radius, 2));
+
+    intersection = (origin * t) + direction;
+    normal = cross(direction, intersection);
+    normal = normalize(normal);
+
     return t > 0;
 }

@@ -55,5 +55,9 @@ bool Polygon::intersect(SlVector3 direction, SlVector3 origin){
         return false;
     }
 
+    intersection = (origin * t) + direction;
+    normal = cross(direction, intersection);
+    normal = normalize(normal);
+
     return true;
 }
