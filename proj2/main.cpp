@@ -69,6 +69,9 @@ int main(int argc, char *argv[]) {
                 pixels[j][i][1] = tmp->green * 255;
                 pixels[j][i][2] = tmp->blue * 255;
 
+
+                /** Light calculations start here **/
+
                 //compute V the bisector of origin and intersection
                 SlVector3 v = tmp->intersection - ray.origin;
                 v = normalize(v);
@@ -87,6 +90,8 @@ int main(int argc, char *argv[]) {
                     pixels[j][i][1] += ((tmp->Kd * tmp->green * diffuse) + (tmp->Ks * specular)) * lightIntensity;
                     pixels[j][i][2] += ((tmp->Kd * tmp->blue * diffuse) + (tmp->Ks * specular)) * lightIntensity;
                 }
+
+                /** Light calculations end here **/
             }
             else{
                 pixels[j][i][0] = ray.BG_r * 255;
