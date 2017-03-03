@@ -33,7 +33,8 @@ int main(int argc, char *argv[]) {
     * calculate ray-object intersections, choose closest T
     * set pixel to that color
     */
-    double diffuse;
+    double lightIntensity = 1 / sqrt(ray.lights.size());
+    double diffuse, specular;
     for(int i = 0; i < ray.Nx; i++) {
         for (int j = 0; j < ray.Ny; j++) {
             /** calculates pixel location in world space **/
@@ -49,7 +50,6 @@ int main(int argc, char *argv[]) {
             /* Temp Variables for intersection*/
             int t_ind = -1;
             double tmp_t = 100;
-            double lightIntensity = 1 / sqrt(ray.lights.size());
 
             /** Check each Shape object in the vector */
             for (int k = 0; k < polys.size(); k++) {
@@ -69,16 +69,23 @@ int main(int argc, char *argv[]) {
                 pixels[j][i][1] = tmp->green * 255;
                 pixels[j][i][2] = tmp->blue * 255;
 
+                //compute V the bisector of origin and intersection
+                SlVector3 v = tmp->intersection - ray.origin;
+                v = normalize(v);
+
                 //for each light
                 for(int l_ind = 0; l_ind < ray.lights.size(); l_ind++){
                     SlVector3 l = tmp->intersection  - ray.lights.at(l_ind);
                     l = normalize(l);
 
-                    diffuse = max(0.0, dot(tmp->normal, l));
+                    SlVector3 h = (v + l) / mag(v + l);
 
-                    pixels[j][i][0] += (tmp->Kd * tmp->red * diffuse) * lightIntensity * 4;
-                    pixels[j][i][1] += (tmp->Kd * tmp->green * diffuse) * lightIntensity * 10;
-                    pixels[j][i][2] += (tmp->Kd * tmp->blue * diffuse) * lightIntensity * 4;
+                    diffuse = max(0.0, dot(tmp->normal, l));
+                    specular = pow(max(0.0, dot(tmp->normal, h)), tmp->gloss);
+
+                    pixels[j][i][0] += ((tmp->Kd * tmp->red * diffuse) + (tmp->Ks * specular)) * lightIntensity;
+                    pixels[j][i][1] += ((tmp->Kd * tmp->green * diffuse) + (tmp->Ks * specular)) * lightIntensity;
+                    pixels[j][i][2] += ((tmp->Kd * tmp->blue * diffuse) + (tmp->Ks * specular)) * lightIntensity;
                 }
             }
             else{
